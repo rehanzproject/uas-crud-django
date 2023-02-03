@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+
+{% for message in messages %}
+{% if message %}
+<div class="alert alert-success"> {{ message }}</div>
+{% endif %}
+{% endfor %}
+        <!-- untuk home -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="../static/img/perpus.jpg"></div>
+            <div class="swiper-slide"><img src="../static/img/perpus2.jpg"></div>
+            <div class="swiper-slide"><img src="../static/img/perpus3.jpg"></div>
+            <div class="swiper-slide"><img src="../static/img/perpus5.jpg"></div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          
+        </div>
+        
+        <div class="text-center">
+            <h1>Selamat Datang di Perpustakaan</h1>
+            <p>Disini Kami meminjamkan berbagai macam buku , mulai dari novel , dongeng , pelajaran , dan lain lain.</p>
+          <a href="#"><button class="btn btn-outline-primary">Pelajari lebih lanjut</button></a> 
+          
+               <h2 class="pt-lg-5">Apakah Kamu Mau Pinjam ?</h2>
+                <p>Silahkan untuk klik tombol dibawah ini</p>
+                <a href="/tambah"><button class=" btn btn-outline-dark" >Klik untuk pinjam</button></a>
+                <hr>
+             <p> &copy; 2022 <b>Copyright </b> By @Rehan Maulana  </p> 
+   <script>
+     const swiper = new Swiper('.swiper', {
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+    // Optional parameters
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      clickable: true,
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+  });
+   </script>
+{% endblock %}

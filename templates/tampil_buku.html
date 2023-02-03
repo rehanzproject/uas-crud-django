@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block tabelbarang %} 
+    <h1 style="text-align: center;">Table Buku</h1>
+    <table border="1" class="table table-responsive table-striped py-2">
+        <tr>
+          
+            <td>Nama Buku</td>
+            <td>Penerbit</td>
+            <td>Stok</td>
+            <td>Jumlah Halaman</td>
+            <td>Gambar Buku</td>
+            <td>Jenis Buku</td>
+            <td colspan="2">Aksi</td>
+        </tr>
+   
+    {% for Buku in bukuku %}
+    <tr class="table-primary">
+        <th> {{ Buku.nama_buku }}</th>
+        <th> {{ Buku.penerbit }}</th>
+        <th> {{ Buku.stok }}</th>
+        <th> {{ Buku.jumlah_halaman }}</th>
+        <th> {{ Buku.gbr_buku }}</th>
+        <th> {{ Buku.jenis_buku }}</th>
+        <th><a href="editTbl/{{ Buku.id }}" class="btn btn-outline-dark">Update</a></th>
+       <th><a href="delTbl/{{ Buku.id }}" class="btn btn-primary">Delete</a></th>
+     </tr>
+    {% endfor %}
+    </table>
+   
+</body>
+</html>
+
+{% endblock %}

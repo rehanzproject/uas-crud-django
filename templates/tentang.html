@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block tentang %}
+<div class="container">
+    <img src="../static/img/bukucatur.jpg" alt="" width="300px" height="300px" class="rounded float-start pt-5 mx-2">
+    <div class="text pt-lg-5">
+        <h2>Strategi buku catur</h2>
+        <p>Buku ini khusus untuk orang yang mau belajar catur </p>
+        <p>Baca buku ini, 1 jam dijamin bisa bermain catur!!!</p>
+        <p>Jika anda ingin pinjam , klik di bawah sini</p>
+        <a href="/tambah"><button class="btn btn-outline-dark">Klik untuk Pinjam</button></a>
+        <p class="pt-5"></p>
+    <img src="../static/img/bukupelajaran.jpg" alt="" width="300px" height="300px" class="rounded float-start pt-5 mx-2">
+    <h2 class="pt-5">Buku pelajaran Anak SD</h2>
+    <p>Buku ini untuk Pembelajaran Anak SD </p>
+    <p> Seperti Bahasa Indonesia , Matematika ,Ilmu Pengetahuan Sosial , dll</p>
+    <p>Jika anda ingin pinjam , klik di bawah sini</p>
+    <a href="/tambah"><button class="btn btn-outline-dark">Klik untuk Pinjam</button></a>
+    </div>
+    <div class="text text-center pt-md-5">
+        <div class="swiper">
+          
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide"><img src="../static/img/mat.webp"></div>
+              <div class="swiper-slide"><img src="../static/img/keg.jpg"></div>
+              <div class="swiper-slide"><img src="../static/img/alf.jpg"></div>
+              <div class="swiper-slide"><img src="../static/img/pkn.jpg"></div>
+            </div>
+         
+            <div class="swiper-pagination"></div>
+          
+    
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <script src="../static/js/swiper.js"></script>
+          </div>
+        <h1>Dan masih banyak lagi !</h1>
+        <h5>Apa yang kamu tunggu ? </h5>
+        <h5>Segera pinjam buku!</h5>
+        <a href="/tambah"><button class="btn btn-outline-dark">Klik untuk Pinjam</button></a>
+    
+    </div>
+</div>
+<hr>
+<p class="text text-center"> &copy; 2022 <b>Copyright </b> By @Rehan Maulana  </p> 
+<script>
+     const swiper = new Swiper('.swiper', {
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+    // Optional parameters
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      clickable: true,
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+    // And if we need scrollbar
+  });
+</script>
+{% endblock %}

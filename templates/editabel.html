@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block edit %}
+    <div class="container-fluid ">
+        <div class="row justify-content-center">
+            <div class="col-md-3 ">
+                <section id="form">
+                    <h3 class="pt-3">Silahkan isi di Form Berikut!</h3>
+                    <form action="/editBuku/" method="POST" >
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="namaPeminjam" class="form-label">ID (tidak perlu diubah) :</label>
+                            <input type="text" id="txtId" name="txtId" class="form-control" value="{{cek.id}}" placeholder="ID" maxlength="50" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="namaPeminjam" class="form-label">Nama Buku :</label>
+                            <input type="text" id="namaPeminjam" name="namaPeminjam" class="form-control" value="{{cek.nama_buku}}" placeholder="Nama kamu" maxlength="50" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="namaBuku" class="form-label">Penerbit :</label>
+                            <input type="text" id="namaBuku" name="namaBuku" class="form-control" placeholder="Nama Buku" value="{{cek.penerbit}}" maxlength="50" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="namaPeminjam" class="form-label">Stok :</label>
+                            <input type="text" id="batasWaktu" name="batasWaktu" class="form-control" value="{{cek.stok}}" placeholder="Batas Waktu" maxlength="50" required>
+                        </div>
+                        <div class="form-group"> 
+                            <label for="namaPeminjam" class="form-label">Jumlah Halaman :</label>
+                            <input type="text" id="komentar" name="komentar" class="form-control" value="{{cek.jumlah_halaman}}" placeholder="Komentar" maxlength="50" required>
+                        </div>
+                        <p class="pt-3"></p>
+                        
+                        <button type="submit" class="btn btn-dark " >Tambah</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+   {% endblock %}

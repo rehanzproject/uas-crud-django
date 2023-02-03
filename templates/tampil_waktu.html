@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block tabel %}
+<h1 style="text-align: center;">Table Peminjam</h1>
+
+    <table border="1" class="table table-responsive-md table-striped">
+        <tr>
+            <th>Nama Peminjam</th>
+            <th>Nama Buku</th>
+            <th>Waktu Pinjam</th>
+            <th>Batas Waktu</th>
+            <th>Komentar</th>
+            <th colspan="2">Aksi</th>
+        </tr>
+   
+    {% for Waktu in pinjam %}
+    <tr class="table-primary">
+        <td> {{ Waktu.nama_peminjam }}</td>
+        <td> {{ Waktu.nama_buku }}</td>
+        <td> {{ Waktu.waktu_pinjam }}</td>
+        <td> {{ Waktu.batas_waktu }}</td>
+        <td> {{ Waktu.komen }}</td>
+        <td><a href="editTbl/{{ Waktu.id }}" class="btn btn-outline-dark">Update</a>
+        </td>
+        <td>  <a href="delTbl/{{ Waktu.id }}" class="btn btn-primary">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+    </table>
+   {% endblock %}
